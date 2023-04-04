@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Card from './components/Card/Card';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Product from './components/Product/Product';
+import Feedback from "./components/Feedback/Feedback"
 
 
 
@@ -14,8 +15,10 @@ function App() {
     <div className="App">
       <div className="AppGlass">
         <Sidebar/>
-        <Card/>
+        <Route path="/card" exact><Card/></Route>
         <Route path="/product" exact><Product/></Route>
+        <Route path="/feedback" exact><Feedback/></Route>
+        
       </div>
     </div>
     </Switch>

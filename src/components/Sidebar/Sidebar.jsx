@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Sidebar.css";
+import "../styles/style.css";
 import Logo from "../images/logo1.png";
 import { UilSignOutAlt } from "@iconscout/react-unicons";
 import { SidebarData } from "../../Data/Data";
@@ -38,13 +38,9 @@ const Sidebar = () => {
       <div className="menu">
         {SidebarData.map((item, index) => {
           return (
-            <div
-              className={selected === index ? "menuItem active" : "menuItem"}
-              key={index}
-              onClick={() => setSelected(index)}
-            >
+            <div className={selected === index ? "menuItem active" : "menuItem"} key={index} onClick={() => setSelected(index)}>
               <item.icon />
-              <Link to="/product"><span>{item.heading}</span></Link>
+              <Link to={item.path}><span>{item.heading}</span></Link>
             </div>
           );
         })}
